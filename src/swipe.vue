@@ -291,6 +291,45 @@
           }
         }, 10);
       },
+      
+      swipeTo(toIdx) {
+        if (this.$children.length === 0) return;
+        if (this.$children.length < 2) return;
+
+        var currentPage, toPage, pageWidth;
+        var speed = this.speed || 300;
+        var pages = this.pages;
+        var pageCount = pages.length;
+        var index = this.index;
+        var isNext = toIdx > index;
+        if(toIdx >= pages.length ) return;
+        if(toIdx < 0 ) return;
+
+        pageWidth = this.$el.clientWidth * (isNext ? 1 : -1);
+        currentPage = pages[index];
+        toPage = pages[toIdx];
+
+        var newIndex = toIdx;
+        var oldPage = this.$children[index].$el;
+        
+        toPage.style.display = 'block';
+        this.translate(toPage, pageWidth);
+
+        var callback = () => {
+          if (newIndex !== undefined) {
+            var newPage = this.$children[newIndex].$el;
+            removeClass(oldPage, 'is-active');
+            addClass(newPage, 'is-active');
+
+            this.index = newIndex;
+          }
+        };
+
+        setTimeout(() => {
+            this.translate(currentPage, -pageWidth, speed, callback);
+            this.translate(toPage, 0, speed);
+        }, 10);
+      },
 
       next() {
         this.doAnimate('next');
