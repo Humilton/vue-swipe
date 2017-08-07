@@ -10,18 +10,24 @@ $ npm install vue-swipe
 
 # for JavaScript user :
 install NodeJs first, then install npm plugins for conpile:
-## install vue package: https://cn.vuejs.org/v2/guide/installation.html#Bower
+ install vue package: https://cn.vuejs.org/v2/guide/installation.html#Bower
+```bash
 npm install -g vue
 npm install --global vue-cli
-## install webpack package: https://webpack.github.io/docs/webpack-dev-server.html
+```
+ install webpack package: https://webpack.github.io/docs/webpack-dev-server.html
+```bash
 npm install -g webpack-dev-server
-## compile :
+```
+ compile :
+```bash
 npm install vue -save-dev
 npm install vue-loader -save-dev
 npm install vue-template-compiler -save-dev
 npm install
 npm run build  // now file dist/vue-swipe.css and dist/vue-swipe.js is available
 npm run dev  // Open http://localhost:8080/example/ in browser
+```
 
 # Detail for code usage :
 ```JavaScript
