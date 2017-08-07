@@ -6,5 +6,10 @@ swipeEle = new Vue({
   components: {
     'swipe': vueSwipe,
     'swipe-item': vueSwipeItem
+  },
+  methods: {
+    indexChange: function () {
+      alert("indexChange");
+    }
   }
 }).$children[0];

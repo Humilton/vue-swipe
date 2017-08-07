@@ -29,7 +29,7 @@
 </head>
 <body>
   <div id="container">
-    <swipe class="my-swipe" :auto="0" >
+    <swipe class="my-swipe" :auto="0" v-on:index-change="indexChange">
       <swipe-item class="slide1">Slide1</swipe-item>
       <swipe-item class="slide2">Slide2</swipe-item>
       <swipe-item class="slide3">Slide3</swipe-item>

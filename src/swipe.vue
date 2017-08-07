@@ -249,6 +249,7 @@
             addClass(newPage, 'is-active');
 
             this.index = newIndex;
+            this.$emit('index-change');
           }
 
           if (prevPage) {
@@ -299,7 +300,6 @@
         var currentPage, toPage, pageWidth;
         var speed = this.speed || 300;
         var pages = this.pages;
-        var pageCount = pages.length;
         var index = this.index;
         var isNext = toIdx > index;
         if(toIdx >= pages.length ) return;
@@ -322,6 +322,8 @@
             addClass(newPage, 'is-active');
 
             this.index = newIndex;
+            toPage.style.display = '';
+            this.$emit('index-change');
           }
         };
 
